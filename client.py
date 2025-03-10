@@ -2,7 +2,7 @@ import requests
 
 # Replace with your server's URL
 url = "http://127.0.0.1:8020/process/"
-file_path = "Finit.pdf"
+file_path = "uv.pdf"
 
 with open(file_path, "rb") as file:
     response = requests.post(url, files={"file": file})

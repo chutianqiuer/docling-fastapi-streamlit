@@ -15,6 +15,7 @@ from docling.pipeline.standard_pdf_pipeline import StandardPdfPipeline
 from docling_core.types.doc import ImageRefMode, PictureItem, TableItem
 from docling.datamodel.pipeline_options import PdfPipelineOptions
 
+
 app = FastAPI()
 _log = logging.getLogger(__name__)
 
@@ -160,5 +161,11 @@ async def download_file(filename: str):
 
 if __name__ == "__main__":
     import uvicorn
+    import argparse
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--port", type=int, default=8020, help="Port to run the API on")
+    args = parser.parse_args()
+    uvicorn.run("app:app", host="0.0.0.0", port=args.port, reload=True)
 
-    uvicorn.run("app:app", host="0.0.0.0", port=8020, reload=True)
+
