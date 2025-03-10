@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pypdfium2
+docling
+docling_core
+pandas
+PyYAML
+requests
